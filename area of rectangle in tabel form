@@ -1,0 +1,36 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+int main(){
+    int input;
+    cout <<"enter number of areas u want to find"<<endl;
+    cin>>input;
+    int arrl[input];
+    int arrb[input];
+    for (int i = 0; i < input; i++)
+    {
+        cout<<"enter of lenght of rectangle "<<i+1<<endl;
+        cin>>arrl[i];
+        cout<<"enter of width of rectangle "<<i+1<<endl;
+        cin>>arrb[i];
+
+    }
+    cout<<left;
+    cout<<setw(12)<<"length"<<setw(12)<<"width"<<right<<setw(4)<<"area"<<endl;
+    cout<<setfill('-')<<setw(28)<<'-'<<endl;
+    cout<<setfill(' ');
+    for (int i = 0; i < input; i++)
+    {
+    cout<<left;
+    cout<<setw(12)<<arrl[i];
+    cout<<setw(12)<<arrb[i];
+    cout<<right<<setw(4)<<arrl[i]*arrb[i]<<endl;
+
+    }
+
+
+
+    return 0;
+}
+
