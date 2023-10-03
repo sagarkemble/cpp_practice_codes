@@ -1,0 +1,134 @@
+#include<iostream>
+#include<iomanip>
+#include<windows.h>
+#include<unistd.h>
+
+using namespace std; 
+void loading(const char*,int,int,char);
+void next_line(int);//next line
+void line(int);//prints line for presentation
+void cls();//clear screen
+void welcome_screen();//welcome screen
+void main1();
+void submain1();
+void submain2();
+void submain3();
+void submain4();
+int main(){           //function of control flow
+    welcome_screen();
+    main1();
+    
+    return 0;
+}
+void welcome_screen(){
+
+
+    cout<<setfill('-')<<setw(65)<<"VEHICLE WASHING CENTRE  SANGLI";
+    cout<<setfill('-')<<setw(35)<<'-';
+    cout<<setfill(' ');
+    next_line(3);
+    cout<<setw(87)<<"WELCOME TO VEHICLE WASHING CENTRE WHERE YOU WILL GET A STATISFIED SERVICES"<<endl;
+    cout<<setw(61.5)<<right<<"PRESS ENTER TO CONTINUE"<<endl;
+    getchar();
+    cls();
+    loading("loading application",5,1,'.');
+    cls();
+    cout<<"\"GET READY TO EXPERIENCE THE SHINE OF YOUR VEHICLE\"";
+    loading("",3,1,'.');
+    next_line(1);
+    cls();
+    cout<<"LETS GO";
+    loading("",1,2,'.');
+    cls();
+    return;
+    
+}
+void main1(){
+    line(56);
+    int input_of_main1;
+    cout<<"PRESS FOLLOWING NUMEBR ACCORDIN TO SERVICE YOU NEED :)"<<endl;
+    cout<<"1 FOR SERVICES OF WASHING CENTRE"<<endl;
+    cout<<"2 FOR PURCHASING MEMBERSHIP"<<endl;
+    cout<<"3 FOR MORE INFORMATION ABOUT MEMBERSHIP"<<endl;
+    cout<<"4 FOR TO KNOW DEVELOPERS"<<endl;
+    cin>>input_of_main1;
+    cls();
+    if (input_of_main1<=4)
+    {
+        switch (input_of_main1)
+        {
+        case 1:
+            submain1();
+            break;
+        case 2:
+            submain2();
+        case 3:
+            submain3();
+            break;
+        case 4:
+            submain4();
+        default:
+            break;
+        }
+    }
+else{
+    cout<<"OOPS!! wrong data entered:("<<endl;
+    cout<<"TRY AGAIN"<<endl;
+    loading("",1,2,' ');
+
+}
+    return;
+}
+void submain1(){
+
+    return;
+}
+void submain2(){
+    return;
+}
+void submain3(){
+    line(80);
+    cout<<"OUR WASHING CENTER HAS A MEMBERSHIP PLAN FOR A YEAR/MONTHS";
+    loading("",3,1,'.');
+    next_line(1);
+    cout<<"YOU MIGHT WONDER MEMBER SHIP? BUT WHY";
+    loading("",6,1,'?');
+    next_line(1);
+    cout<<"HERES WHY WE OFFER GREAT DISCOUNT ON WASHING SERVICES DEPENDING ON MEMBERSHIP YOU PURCHASE"<<endl;
+
+
+    return;
+}
+void submain4(){
+    return;
+}
+
+
+
+
+//
+void cls(){
+    system("cls");
+}
+void line(int a){
+    cout<<setw(a)<<setfill('-')<<'-';
+    cout<<setw(' ');
+    cout<<endl;
+}
+void next_line(int a){
+    for (int i = 0; i < a; i++)
+    {
+        cout<<endl;
+    }
+    return;
+}
+void loading(const char* str,int iteration,int time,char symbol){
+    cout<<str;
+    for (int i = 0; i < iteration; i++)
+    {
+        cout<<symbol;
+        sleep(time);
+    }
+    
+    return;
+}
