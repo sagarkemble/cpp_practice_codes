@@ -1,0 +1,93 @@
+#include <iostream>
+using namespace std;
+void cls(){
+    system("cls");
+}
+class base{
+    float a;
+    public:
+    void setdata(float a){
+        this->a=a;
+        
+     }
+     void showdata(){
+        cout<<a<<endl;
+     }
+     base operator +(base b){
+    base temp;
+        temp.a=b.a+a;   
+        return temp;
+     }
+     
+     base operator -(base b){
+        base temp;
+        temp.a=b.a-a;
+        return temp;
+     }
+     base operator *(base b){
+        base temp;
+        temp.a=b.a*a;
+        return temp;
+     }
+     base operator /(base b){
+        base temp;
+        temp.a=b.a/a;
+        return temp;
+     }
+
+};
+int main (){
+    base a1,a2,a3;
+    float temp;
+    cls();
+    cout<<"In this code  2 classes of 1 variable in each is created u should enter the elements and then u can perform the arthmatic operation"<<endl;
+    cout<<"presss enter to continue";
+    getchar();
+    cls();
+    cout<<"enter value of element in class 1"<<endl;
+    cin>>temp;
+    a1.setdata(temp);
+    cls();
+    cout<<"enter value of element in class 2"<<endl;
+    cin>>temp;
+    a2.setdata(temp);
+    cls();
+    int choice;
+    cout<<"press following number for following operation"<<endl;
+    cout<<"1 for adding the class elements"<<endl;
+    cout<<"2 for subtracting the class elements"<<endl;
+    cout<<"3 for multiply the class elements"<<endl;
+    cout<<"4 for dividing the class elements"<<endl;
+    cin>>choice;
+    cls();
+    switch (choice)
+    {
+    case 1:
+    a3=a1+a2;
+        break;
+    
+    case 2:
+    a3=a1-a2;
+        break;
+    
+    case 3:
+    a3=a1*a2;
+        break;
+    
+    case 4:
+    a3=a1/a2;
+        break;
+    
+    default:
+    cout<<"enter a valid number";
+        break;
+    }
+    if (choice<=4)
+    {
+        cout<<"result is ";
+        a3.showdata();
+    }
+    
+    return 0;
+
+}
